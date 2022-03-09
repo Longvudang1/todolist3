@@ -3,7 +3,7 @@ import Card from '../UI/Card';
 import classes from './YsersList.module.css'
 import Button from '../UI/Button';
 const UserList = (props) => {
-    if(props.users != 0){
+    if(props.users != 0){  // eslint-disable-next-line
         return(
             <Card className={classes.users} >
                 <ul>
