@@ -54,7 +54,8 @@ function App() {
   //   setTaskList(arrayDelete);
   // }
   const deleteLocal = () => {
-    const a = window.localStorage.removeItem('donetask'); // eslint-disable-next-line
+    // eslint-disable-next-line
+    const a = window.localStorage.removeItem('donetask'); 
     setTaskListDone([]);
   }
 
