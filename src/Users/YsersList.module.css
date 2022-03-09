@@ -24,4 +24,7 @@
     font-family: 'Gochi Hand', cursive;
     justify-content:space-between;
   }
-  
+  .button {
+    font-family: 'Gochi Hand', cursive;
+    width: 20%;
+  }

@@ -2,10 +2,13 @@
     border: 1px solid #4f005f;
     background: #4f005f;
     color: white;
-    padding: 0.25rem 1rem;
     cursor: pointer;
     margin : 0.5rem;
+    padding: 5px;
+    width: fit-content;
     font-family: 'Gochi Hand', cursive;
+    text-align: center;
+
 
     
   }
