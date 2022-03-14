@@ -8,9 +8,7 @@
     width: fit-content;
     font-family: 'Gochi Hand', cursive;
     text-align: center;
-
-
-    
+    text-align: center;
   }
   
   .button:hover,
@@ -24,4 +22,11 @@
     
     outline: none;
   }
+  @media only screen and (max-width: 450px) {
+    .button{
+      
+      
+      
+    }
   
+  }

@@ -2,6 +2,8 @@ import React from 'react'
 import Card from '../UI/Card';
 import classes from './YsersList.module.css'
 import Button from '../UI/Button';
+import { BsFillCheckSquareFill,BsFillPencilFill } from "react-icons/bs";
+
 const UserList = (props) => {
     // eslint-disable-next-line
     if(props.users != 0){  
@@ -14,8 +16,8 @@ const UserList = (props) => {
                         <li key={user.id} className={classes.text} >
                             {user.task}
                             <div>
-                                <Button className={classes.Button} onClick={() => {props.onDeleteTask (index)} }>Done task</Button>
-                                <Button className={classes.Button} onClick={() => {props.onUpdateTask (index)}}>Edit task</Button>
+                                <Button className={classes.Button} onClick={() => {props.onDeleteTask (index)} }><BsFillCheckSquareFill></BsFillCheckSquareFill></Button>
+                                <Button className={classes.Button} onClick={() => {props.onUpdateTask (index)}}><BsFillPencilFill></BsFillPencilFill></Button>
                             </div>
                             
                         </li>

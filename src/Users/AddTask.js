@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import Card from '../UI/Card';
 import classes from './AddTask.module.css'
 import Button from '../UI/Button';
+import { BsSave,BsFillFilePlusFill } from "react-icons/bs";
+
 const AddTask = (props) => {
     const [enterTask,setTask] = useState('');
     const addTaskHandler = (event) => {
@@ -43,7 +45,7 @@ const AddTask = (props) => {
                     <label htmlFor="task"  >Input Task</label>
                     
                     <input id='task' placeholder="What do you need to do?"  type ='text' value ={enterTask} onChange={taskChangeHandler} className={classes.form__input} required></input>
-                    <Button type='submit' className={classes.button} >Add Task</Button>
+                    <Button type='submit' className={classes.button} ><BsFillFilePlusFill></BsFillFilePlusFill></Button>
                     
                 </form>
 
@@ -52,7 +54,7 @@ const AddTask = (props) => {
 
                     <input id='taskEdit' placeholder="Edit task?"  type ='text' value ={props.edited.task} onChange={editChangeHandler} className={classes.form__input} ></input>
                     <Button className={classes.button} onClick={()=> {
-                        saveTask(props.edited.task,props.edited.id) }}>Save Task</Button>
+                        saveTask(props.edited.task,props.edited.id) }}><BsSave></BsSave></Button>
 
                 </div>
 
