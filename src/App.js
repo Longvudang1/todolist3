@@ -18,6 +18,8 @@ function App() {
   const [taskList,setTaskList] = useState([]);
   const [taskListDone,setTaskListDone] = useState([]);
   const [searchTerm,setSearchTerm] = useState('');
+  const [isEditing, setIsEditing] = useState(false);
+
   // const [order,setOrder] = useState('ASC');
   const addTaskHandler =(mtask) => {
     setTaskList((prevTask) => {
@@ -94,6 +96,13 @@ function App() {
 
     
   };
+  const startEditingHandler = () => {
+    setIsEditing(true);
+  };
+
+  const stopEditingHandler = () => {
+      setIsEditing(false);
+  };
   return (
     
     
@@ -106,7 +115,7 @@ function App() {
         </div>
         
         <div>
-          <AddTask onAddTask={addTaskHandler} edited={editedList} edited1={setEditedList}  setTaskList={setTaskList} taskList={taskList}></AddTask>
+          <AddTask isEditing={isEditing} startEditingHandler={startEditingHandler} stopEditingHandler={stopEditingHandler} onAddTask={addTaskHandler} edited={editedList} edited1={setEditedList}  setTaskList={setTaskList} taskList={taskList}></AddTask>
           <label id = 'text'className="form__label" htmlFor="todo" >~ Today I need to ~</label>
           {/* <Button onClick={() => sorting()}>Sorting</Button> */}
 
@@ -147,7 +156,7 @@ function App() {
                     return false
                   }
                 
-                })} onDeleteTask ={deleteTaskHandler}  onUpdateTask = {editTaskHandler} onSorting = {sorting} ></UserList>
+                })} isEditing={isEditing} startEditingHandler={startEditingHandler} stopEditingHandler={stopEditingHandler}  onDeleteTask ={deleteTaskHandler}  onUpdateTask = {editTaskHandler} onSorting = {sorting} ></UserList>
                 
               </div>
               <div id='first'> 

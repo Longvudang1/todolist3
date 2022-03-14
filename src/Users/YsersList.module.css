@@ -23,8 +23,17 @@
     text-align: right;
     font-family: 'Gochi Hand', cursive;
     justify-content:space-between;
+    flex-wrap: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  
+  
   }
   .button {
     font-family: 'Gochi Hand', cursive;
     width: 20%;
+  }
+  .div22{
+    display: flex;
   }

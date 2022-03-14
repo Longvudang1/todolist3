@@ -17,7 +17,7 @@ const UserList = (props) => {
                             {user.task}
                             <div>
                                 <Button className={classes.Button} onClick={() => {props.onDeleteTask (index)} }><BsFillCheckSquareFill></BsFillCheckSquareFill></Button>
-                                <Button className={classes.Button} onClick={() => {props.onUpdateTask (index)}}><BsFillPencilFill></BsFillPencilFill></Button>
+                                <Button className={classes.Button} onClick={() => {props.onUpdateTask (index);props.startEditingHandler()}}><BsFillPencilFill></BsFillPencilFill></Button>
                             </div>
                             
                         </li>

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Card from '../UI/Card';
 import classes from './AddTask.module.css'
 import Button from '../UI/Button';
-import { BsSave,BsFillFilePlusFill } from "react-icons/bs";
+import { BsSave,BsFillFilePlusFill,BsXLg } from "react-icons/bs";
 
 const AddTask = (props) => {
     const [enterTask,setTask] = useState('');
@@ -35,6 +35,17 @@ const AddTask = (props) => {
         props.setTaskList(editedTaskList);
         props.edited1({task:""})
     }
+
+    const saveExpenseDataHandler = (enteredExpenseData) => {
+        const expenseData = {
+        ...enteredExpenseData,
+        id: Math.random().toString(),
+        };
+        props.onAddExpense(expenseData);
+        
+    };
+
+    
     
     return(
         
@@ -49,14 +60,15 @@ const AddTask = (props) => {
                     
                 </form>
 
-                <div>
+                {/* <div>
                     <label htmlFor="task" >Edit Task</label>
 
                     <input id='taskEdit' placeholder="Edit task?"  type ='text' value ={props.edited.task} onChange={editChangeHandler} className={classes.form__input} ></input>
+
                     <Button className={classes.button} onClick={()=> {
                         saveTask(props.edited.task,props.edited.id) }}><BsSave></BsSave></Button>
 
-                </div>
+                </div> */}
 
                 
 
@@ -79,7 +91,29 @@ const AddTask = (props) => {
                  */}
                
             </Card>
-            
+            <div>
+                <div className='new-expense'>
+                    {props.isEditing && (
+                        <div onSaveExpenseData={saveExpenseDataHandler}
+                             >
+                            <label htmlFor="task" >Edit Task</label>
+
+                            <input id='taskEdit' placeholder="Edit task?"  type ='text' value ={props.edited.task} onChange={editChangeHandler} className={classes.form__input} ></input>
+
+                            <Button className={classes.button} onClick={()=> {
+                                saveTask(props.edited.task,props.edited.id) }}><BsSave></BsSave></Button>
+                            <Button type="button" onClick={props.stopEditingHandler}><BsXLg></BsXLg></Button>
+                            
+                        </div>
+                        
+
+                    )}
+                </div>
+
+                   
+
+            </div>
+
                 
         </div>
 

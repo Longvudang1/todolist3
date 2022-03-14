@@ -31,8 +31,6 @@
   }
 }
 .container {
-  width: 50%;
-  height: 100vh;
   min-height: 100%;
   background: #f1f5f8;
   background-image: radial-gradient(#bfc0c1 7.2%, transparent 0);
@@ -103,6 +101,10 @@ body {
   .container{
     width: 100%;
     border-radius: 0px;
+  }
+  #wrap{
+    -webkit-flex-direction: column-reverse; 
+    flex-direction: column-reverse; 
   }
 }
 
