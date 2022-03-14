@@ -90,7 +90,7 @@ const AddTask = (props) => {
                 </div>
                  */}
                
-            </Card>
+            
             <div>
                 <div className='new-expense'>
                     {props.isEditing && (
@@ -114,7 +114,7 @@ const AddTask = (props) => {
 
             </div>
 
-                
+            </Card>
         </div>
 
     );
